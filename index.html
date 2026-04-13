@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <title>Геохроника ишана Курбангали — Главная карта</title>
+    <link
+      rel="stylesheet"
+      href="./vendor/leaflet/leaflet.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="./vendor/leaflet/leaflet.js"></script>
+    <script defer src="./data/events.js"></script>
+    <script defer src="./site.js"></script>
+  </head>
+  <body data-page="home" class="home-page">
+    <header class="site-nav site-nav--floating">
+      <a class="brand" href="./index.html">
+        <span class="brand-title">Геохроника ишана Курбангали</span>
+      </a>
+
+      <button class="nav-toggle" id="siteNavToggle" type="button" aria-expanded="false" aria-controls="siteNavMenu" aria-label="Открыть меню">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-links" id="siteNavMenu">
+        <a class="is-active" href="./index.html">Главная</a>
+        <a href="./track.html">Трек</a>
+        <a href="./heatmap.html">Тепловая карта</a>
+        <a href="./about.html">О проекте</a>
+      </nav>
+    </header>
+
+    <main class="home-layout">
+      <div id="homeMap" class="map-canvas"></div>
+      <div class="map-atmosphere"></div>
+
+      <section class="glass-card home-description">
+        <div class="home-description-head">
+          <div class="home-description-anchor">
+            <p class="dock-kicker">Текущее местоположение</p>
+            <div class="home-description-location">
+              <strong id="homeEventName">Загрузка...</strong>
+              <span class="home-date-chip" id="homeCardDate">—</span>
+            </div>
+          </div>
+        </div>
+        <div class="home-description-body">
+          <p class="home-description-text" id="homeDescriptionText">Подготавливаю описание текущего шага маршрута.</p>
+        </div>
+      </section>
+
+      <section class="glass-card home-dock">
+        <div class="home-timeline-row">
+          <div class="transport-row">
+            <button id="homePrevBtn" class="control-pill control-pill--icon" type="button" aria-label="Назад" title="Назад">
+              <span aria-hidden="true">&#10094;</span>
+            </button>
+            <button id="homePlayBtn" class="control-pill control-pill--primary control-pill--icon" type="button" aria-label="Воспроизвести" title="Воспроизвести">
+              <span aria-hidden="true">&#9654;</span>
+            </button>
+            <button id="homeNextBtn" class="control-pill control-pill--icon" type="button" aria-label="Вперёд" title="Вперёд">
+              <span aria-hidden="true">&#10095;</span>
+            </button>
+          </div>
+
+          <div class="range-shell range-shell--inline">
+            <span id="homeMinDate">—</span>
+            <input id="homeSlider" class="beauty-range" type="range" min="0" max="0" value="0" step="1" />
+            <span id="homeMaxDate">—</span>
+          </div>
+
+          <label class="timeline-select">
+            <span>Скорость</span>
+            <select id="homeSpeedSelect">
+              <option value="3800">Медленно</option>
+              <option value="2800" selected>Средне</option>
+              <option value="1800">Быстро</option>
+            </select>
+          </label>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

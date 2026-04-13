@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <title>Геохроника ишана Курбангали — Тепловая карта</title>
+    <link
+      rel="stylesheet"
+      href="./vendor/leaflet/leaflet.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="./vendor/leaflet/leaflet.js"></script>
+    <script defer src="./data/events.js"></script>
+    <script defer src="./vendor/leaflet-heat/leaflet-heat.js"></script>
+    <script defer src="./site.js"></script>
+  </head>
+  <body data-page="heatmap" class="home-page heat-page">
+    <header class="site-nav site-nav--floating">
+      <a class="brand" href="./index.html">
+        <span class="brand-title">Геохроника ишана Курбангали</span>
+      </a>
+
+      <button class="nav-toggle" id="siteNavToggle" type="button" aria-expanded="false" aria-controls="siteNavMenu" aria-label="Открыть меню">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-links" id="siteNavMenu">
+        <a href="./index.html">Главная</a>
+        <a href="./track.html">Трек</a>
+        <a class="is-active" href="./heatmap.html">Тепловая карта</a>
+        <a href="./about.html">О проекте</a>
+      </nav>
+    </header>
+
+    <main class="heat-layout">
+      <div id="heatMap" class="map-canvas"></div>
+      <div class="map-atmosphere map-atmosphere--heat"></div>
+
+      <section class="glass-card heat-sidebar">
+        <article class="heat-focus-panel">
+          <div class="heat-focus-head">
+            <div class="heat-focus-anchor">
+              <p class="dock-kicker">Тепловая карта по посещениям</p>
+            </div>
+          </div>
+
+          <div class="heat-focus-block">
+            <div class="heat-focus-location">
+              <strong id="heatFocusName">Загрузка...</strong>
+              <span class="home-date-chip" id="heatFocusValue">—</span>
+            </div>
+            <p class="heat-focus-range" id="heatFocusRange">—</p>
+          </div>
+        </article>
+
+        <article class="heat-list-panel">
+          <div class="heat-list-head">
+            <div class="heat-summary">
+              <strong id="heatMetricTitle">Тепловая карта</strong>
+              <p class="heat-summary-text" id="heatMetricCaption">Подготовка описания режима...</p>
+            </div>
+          </div>
+
+          <ol class="heat-leader-list" id="heatLeaders"></ol>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

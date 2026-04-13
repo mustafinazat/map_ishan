@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <title>Геохроника ишана Курбангали — Трек</title>
+    <link
+      rel="stylesheet"
+      href="./vendor/leaflet/leaflet.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="./vendor/leaflet/leaflet.js"></script>
+    <script defer src="./data/events.js"></script>
+    <script defer src="./site.js"></script>
+  </head>
+  <body data-page="track" class="home-page track-page">
+    <header class="site-nav site-nav--floating">
+      <a class="brand" href="./index.html">
+        <span class="brand-title">Геохроника ишана Курбангали</span>
+      </a>
+
+      <button class="nav-toggle" id="siteNavToggle" type="button" aria-expanded="false" aria-controls="siteNavMenu" aria-label="Открыть меню">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-links" id="siteNavMenu">
+        <a href="./index.html">Главная</a>
+        <a class="is-active" href="./track.html">Трек</a>
+        <a href="./heatmap.html">Тепловая карта</a>
+        <a href="./about.html">О проекте</a>
+      </nav>
+    </header>
+
+    <main class="track-layout">
+      <div id="trackMap" class="map-canvas"></div>
+      <div class="map-atmosphere map-atmosphere--track"></div>
+
+      <section class="glass-card track-sidebar">
+        <article class="track-focus-panel">
+          <div class="track-focus-head">
+            <div class="track-focus-anchor">
+              <p class="dock-kicker">Точка маршрута</p>
+              <div class="track-focus-location">
+                <strong id="trackFocusName">Загрузка...</strong>
+                <span class="home-date-chip" id="trackFocusDate">—</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="track-actions">
+            <button class="control-pill" id="trackFitBtn" type="button">Весь маршрут</button>
+            <button class="control-pill" id="trackStartBtn" type="button">Начало</button>
+            <button class="control-pill" id="trackEndBtn" type="button">Финал</button>
+          </div>
+        </article>
+
+        <article class="track-list-panel">
+          <div class="track-list-head">
+            <div>
+              <p class="dock-kicker">Список точек</p>
+            </div>
+            <div class="track-list-tools">
+              <div class="track-legend">
+                <span class="track-legend-label">Старое</span>
+                <div class="track-legend-bar"></div>
+                <span class="track-legend-label">Новое</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="track-list-carousel">
+            <button class="control-pill control-pill--icon track-list-nav" id="trackListPrevBtn" type="button" aria-label="Прокрутить список влево" title="Влево">
+              <span aria-hidden="true">&#10094;</span>
+            </button>
+
+            <ol class="track-point-list" id="trackList"></ol>
+
+            <button class="control-pill control-pill--icon track-list-nav" id="trackListNextBtn" type="button" aria-label="Прокрутить список вправо" title="Вправо">
+              <span aria-hidden="true">&#10095;</span>
+            </button>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
